@@ -4,9 +4,9 @@ public class Radio {
     private int currentProgramme;
     private int currentVolume;
 
-    public int getCurrentVolume() {
-        return currentVolume;
-    }
+    //public int getCurrentVolume() {
+      //  return currentVolume;
+    //}
 
     public int getCurrentProgramme() {
         return currentProgramme;
@@ -24,8 +24,7 @@ public class Radio {
     public int decreaseVolume(int currentVolume) {
         if (currentVolume > 0) {
             currentVolume = currentVolume - 1;
-        }
-        else {
+        } else {
             currentVolume = 0;
         }
         return currentVolume;
@@ -34,8 +33,7 @@ public class Radio {
     public int switchProgrammeUp(int currentProgramme) {
         if (currentProgramme < 9) {
             currentProgramme = currentProgramme + 1;
-        }
-        else {
+        } else {
             currentProgramme = 0;
         }
         return currentProgramme;
@@ -44,9 +42,8 @@ public class Radio {
     public int switchProgrammeDown(int currentProgramme) {
         if (currentProgramme > 0) {
             currentProgramme = currentProgramme - 1;
-        }
-        else {
-            currentProgramme = 0;
+        } else {
+            currentProgramme = 9;
         }
         return currentProgramme;
     }
