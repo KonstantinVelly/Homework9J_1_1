@@ -3,24 +3,31 @@ package src.main.java.radio;
 public class Radio {
     private int currentProgramme;
     private int currentVolume;
+    private int numberOfProgrammes;
 
-    //public int getCurrentVolume() {
-      //  return currentVolume;
-    //}
+    public Radio(int numberOfProgrammes) {
+        this.numberOfProgrammes = numberOfProgrammes;
+        currentProgramme = numberOfProgrammes;
+    }
+
+    public Radio() {
+        numberOfProgrammes = 10;
+    }
 
     public int getCurrentProgramme() {
+
         return currentProgramme;
     }
 
     public int increaseVolume(int currentVolume) {
-        if (currentVolume < 10) {
+        if (currentVolume < 100) {
             currentVolume = currentVolume + 1;
-        }
-        else {
-            currentVolume = 10;
+        } else {
+            currentVolume = 100;
         }
         return currentVolume;
     }
+
     public int decreaseVolume(int currentVolume) {
         if (currentVolume > 0) {
             currentVolume = currentVolume - 1;
@@ -31,7 +38,7 @@ public class Radio {
     }
 
     public int switchProgrammeUp(int currentProgramme) {
-        if (currentProgramme < 9) {
+        if (currentProgramme < numberOfProgrammes - 1) {
             currentProgramme = currentProgramme + 1;
         } else {
             currentProgramme = 0;
@@ -43,15 +50,16 @@ public class Radio {
         if (currentProgramme > 0) {
             currentProgramme = currentProgramme - 1;
         } else {
-            currentProgramme = 9;
+            currentProgramme = numberOfProgrammes - 1;
         }
         return currentProgramme;
     }
+
     public void setCurrentProgramme(int newCurrentProgramme) {
         if (newCurrentProgramme < 0) {
             return;
         }
-        if (newCurrentProgramme > 9) {
+        if (newCurrentProgramme > numberOfProgrammes) {
             return;
         }
         currentProgramme = newCurrentProgramme;
